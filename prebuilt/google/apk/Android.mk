@@ -13,7 +13,7 @@
 # limitations under the License.
 
 LOCAL_PATH:= $(call my-dir)
-
+ifneq ($(WITH_GAPPS), true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := Flipendo
 LOCAL_MODULE_TAGS := optional
@@ -46,3 +46,4 @@ LOCAL_PRODUCT_MODULE := true
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
+endif
