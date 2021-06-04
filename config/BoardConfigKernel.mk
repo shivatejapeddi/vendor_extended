@@ -142,6 +142,10 @@ KERNEL_MAKE_CMD := $(BUILD_TOP)/prebuilts/build-tools/$(HOST_OS)-x86/bin/make
 # Set the full path to the clang command
 KERNEL_MAKE_FLAGS += HOSTCC=$(CLANG_PREBUILTS)/bin/clang
 KERNEL_MAKE_FLAGS += HOSTCXX=$(CLANG_PREBUILTS)/bin/clang++
+KERNEL_MAKE_FLAGS  += AR=$(BUILD_TOP)/vendor/qcom/sdclang/bin/llvm-ar
+#KERNEL_MAKE_FLAGS  += LD=$(BUILD_TOP)/vendor/qcom/sdclang/bin/ld.lld
+KERNEL_MAKE_FLAGS += NM=$(BUILD_TOP)/vendor/qcom/sdclang/bin/llvm-nm
+KERNEL_MAKE_FLAGS += OBJCOPY=$(BUILD_TOP)/vendor/qcom/sdclang/bin/llvm-objcopy
 
 # Since Linux 4.16, flex and bison are required
 KERNEL_MAKE_FLAGS += LEX=$(BUILD_TOP)/prebuilts/build-tools/$(HOST_OS)-x86/bin/flex
